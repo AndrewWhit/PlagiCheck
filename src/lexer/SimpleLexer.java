@@ -22,6 +22,7 @@ public class SimpleLexer implements ILexer {
         if (line != null) {
             tk = new StringTokenizer(line);
         }
+        System.out.print("hallo");
         this.trie = new Trie (mapFactory); //DIC
     }
 
