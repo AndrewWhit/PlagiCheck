@@ -16,6 +16,8 @@ public class AlignmentController {
         this.suspect = suspect;
     }
 
+    String string = new String("dkfad");
+
     public void run() throws FileNotFoundException, IOException {
         /* Erstes File lesen */
         InputStream istStreamOriginal = new FileInputStream(original);
