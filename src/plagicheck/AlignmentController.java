@@ -24,11 +24,12 @@ public class AlignmentController {
         /* später: hier zweites File */
 
         Ilexer lexer = new SimpleLexer(inputOriginal);
-        IToken token = lexer.getNextToken();
+        /*IToken token = lexer.getNextToken();
         while (token != null) {
             System.out.println("Gelesen: "+token);
             token = lexer.getNextToken();
         }
+        */
         /* später: hier Lexer an zweiten Input binden; Leseschleife */
     }
 }
