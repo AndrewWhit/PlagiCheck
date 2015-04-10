@@ -8,7 +8,7 @@ import java.util.Iterator;
  */
 public interface ITrie {
 
-    public ItrieReference insert(Iterator k; IActionAtInsert a);
-    public ItrieReference insert(String s; a1 IActionAtInsert);
+    public ITrieReference insert(Iterator k, IActionAtInsert a);
+    public ITrieReference insert(String s, IActionAtInsert a1);
 
 }

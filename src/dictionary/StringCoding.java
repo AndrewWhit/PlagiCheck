@@ -5,13 +5,31 @@ package dictionary;
  */
 public class StringCoding implements IActionAtInsert {
 
+    private int counter = 0;
+
+    public StringCoding (int start) {
+        this.counter = start;
+    }
+
+    public void setActualValue (int updateValue) {
+        this.counter = updateValue;
+    }
+
     @Override
     public Object actionAtKeyFound(Object previous) {
-        return null;
+        return previous;
     }
 
     @Override
     public Object actionAtKeyNotFound() {
-        return null;
+        return new Integer(counter++);
+    }
+
+    public int getActualValue() {
+        return counter;
+    }
+
+    public String toString () {
+        return "Counter = "+counter;
     }
 }

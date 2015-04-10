@@ -4,34 +4,43 @@ package plagicheck;
  * Created by Andrew on 27.03.2015.
  */
 
+import lexer.*;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.io.*;
 
 
 public class AlignmentController {
-    final private String original;
-    final private String suspect;
 
-    public AlignmentController(String original, String suspect) {
-        this.original = original;
-        this.suspect = suspect;
+
+    public AlignmentController() {
+
     }
 
-    String string = new String("dkfad");
 
     public void run() throws FileNotFoundException, IOException {
         /* Erstes File lesen */
-        InputStream istStreamOriginal = new FileInputStream(original);
+        /*InputStream istStreamOriginal = new FileInputStream(original);
         Reader readerOriginal = new InputStreamReader(istStreamOriginal);
-
+        BufferedReader inputOriginal = new BufferedReader(readerOriginal);
+        */
         /* später: hier zweites File */
 
-        Ilexer lexer = new SimpleLexer(inputOriginal);
+        lexer.ILexer lexer = new SimpleLexer();
+        String recString = lexer.toString();
+        System.out.println(recString);
         /*IToken token = lexer.getNextToken();
         while (token != null) {
             System.out.println("Gelesen: "+token);
             token = lexer.getNextToken();
         }
-        */
+
         /* später: hier Lexer an zweiten Input binden; Leseschleife */
     }
 }

@@ -1,33 +1,43 @@
 package lexer;
 
+import dictionary.*;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.StringTokenizer;
+
 
 
 /**
  * Created by Andrew on 27.03.2015.
  */
 public class SimpleLexer implements ILexer {
-    final private BufferedReader reader;
     final private IMapFactory mapFactory = new TreeMapFactory(); //DIC
-    final private IActionAtInsert = new StringCoding(4711); //DIC
-    final private ITrie trie; // DIC
+    final private IActionAtInsert action = new StringCoding(4711);
+    final private Trie trie;
     private String line;
     private StringTokenizer tk = null;
+    Scanner scanner = new Scanner(System.in);
 
-    public SimpleLexer (BufferedReader reader) throws IOException {
-        this.reader = reader;
-        line = reader.readLine();
+    public SimpleLexer () throws IOException {
+
+        line = scanner.nextLine();
         if (line != null) {
             tk = new StringTokenizer(line);
         }
-        System.out.print("hallo");
-        this.trie = new Trie (mapFactory); //DIC
+        this.trie = new Trie (mapFactory);
+        while (tk.hasMoreTokens()) {
+            String buffString = tk.nextToken();
+            this.trie.insert(buffString, action);
+
+        }
+
     }
 
+
+
     public IToken getNextToken () throws IOException {
-        Log.println(Log.Urgent, "--> next token");
+        //Log.println(Log.Urgent, "--> next token");
         IToken result = null;
         boolean fountToken = false;
         boolean noMoreToken = false;
@@ -36,16 +46,16 @@ public class SimpleLexer implements ILexer {
             if (tk != null) {
                 if (tk.hasMoreTokens()) {
                     String intermediate = tk.nextToken();
-                    Log.println(Log.Urgent, "--- next token:" + intermediate);
+          //          Log.println(Log.Urgent, "--- next token:" + intermediate);
                     //später: result =
                     // trie.insert(intermediate, action);
                     //DIC
-                    result = new Token(-1, 1); //ein dummy!!
+            //        result = new Token(-1, 1); //ein dummy!!
                     fountToken = true;
                 } else {
                     //neue Zeile lesen
                     tk = null;
-                    line = reader.readLine();
+                    line = scanner.nextLine();
                     if (line != null) {
                         tk = new StringTokenizer(line);
                     }
@@ -56,15 +66,18 @@ public class SimpleLexer implements ILexer {
             }
         }
         while (! fountToken && !noMoreToken);
-        Log.println(Log.Urgent, "<-- result token: "+result);
+        //Log.println(Log.Urgent, "<-- result token: "+result);
         return result;
         }
+
+
 
     public String decode(IToken tk) throws UnsupportedOperationException {
         throw new UnsupportedOperationException("noch nicht implementiert");
     }
     public String toString() {
-        return "\nResult Trie \n"+trie;
+        return trie.myRecursiveToString();
     }
+
 }
 
