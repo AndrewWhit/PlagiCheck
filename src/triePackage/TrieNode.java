@@ -70,6 +70,7 @@ public class TrieNode implements ITrieNode {
         for (Object key : outgoingEdgeMap.keySet()) {
             TrieNode trieString = (TrieNode) outgoingEdgeMap.get(key);
             trieString.recString(trieString, sb, 0, lineLength);
+            trieString.firstRec(lineLength);
         }
         return sb.toString();
     }

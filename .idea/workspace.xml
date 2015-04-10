@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19ef3963-6eba-42d3-9d15-76f18825bf2f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/token/IToken.java" />
-      <change type="MOVED" beforePath="C:\Users\Andrew\Documents\Studium\4. Semester\Algorithmen\PlagiCheck\src\dictionary\HashMapFactory.java" afterPath="$PROJECT_DIR$/src/mapPackage/HashMapFactory.java" />
-      <change type="MOVED" beforePath="C:\Users\Andrew\Documents\Studium\4. Semester\Algorithmen\PlagiCheck\src\dictionary\IActionAtInsert.java" afterPath="$PROJECT_DIR$/src/actionsPackage/IActionAtInsert.java" />
-      <change type="MOVED" beforePath="C:\Users\Andrew\Documents\Studium\4. Semester\Algorithmen\PlagiCheck\src\dictionary\IMapFactory.java" afterPath="$PROJECT_DIR$/src/mapPackage/IMapFactory.java" />
-      <change type="MOVED" beforePath="C:\Users\Andrew\Documents\Studium\4. Semester\Algorithmen\PlagiCheck\src\dictionary\ITrie.java" afterPath="$PROJECT_DIR$/src/triePackage/ITrie.java" />
-      <change type="MOVED" beforePath="C:\Users\Andrew\Documents\Studium\4. Semester\Algorithmen\PlagiCheck\src\dictionary\ITrieNode.java" afterPath="$PROJECT_DIR$/src/triePackage/ITrieNode.java" />
-      <change type="MOVED" beforePath="C:\Users\Andrew\Documents\Studium\4. Semester\Algorithmen\PlagiCheck\src\dictionary\ITrieReference.java" afterPath="$PROJECT_DIR$/src/triePackage/ITrieReference.java" />
-      <change type="MOVED" beforePath="C:\Users\Andrew\Documents\Studium\4. Semester\Algorithmen\PlagiCheck\src\dictionary\StringCoding.java" afterPath="$PROJECT_DIR$/src/actionsPackage/StringCoding.java" />
-      <change type="MOVED" beforePath="C:\Users\Andrew\Documents\Studium\4. Semester\Algorithmen\PlagiCheck\src\dictionary\TreeMapFactory.java" afterPath="$PROJECT_DIR$/src/mapPackage/TreeMapFactory.java" />
-      <change type="MOVED" beforePath="C:\Users\Andrew\Documents\Studium\4. Semester\Algorithmen\PlagiCheck\src\dictionary\Trie.java" afterPath="$PROJECT_DIR$/src/triePackage/Trie.java" />
-      <change type="MOVED" beforePath="C:\Users\Andrew\Documents\Studium\4. Semester\Algorithmen\PlagiCheck\src\dictionary\TrieNode.java" afterPath="$PROJECT_DIR$/src/triePackage/TrieNode.java" />
-      <change type="MOVED" beforePath="C:\Users\Andrew\Documents\Studium\4. Semester\Algorithmen\PlagiCheck\src\dictionary\TrieReference.java" afterPath="$PROJECT_DIR$/src/triePackage/TrieReference.java" />
-      <change type="MOVED" beforePath="C:\Users\Andrew\Documents\Studium\4. Semester\Algorithmen\PlagiCheck\src\plagicheck\AlignmentController.java" afterPath="$PROJECT_DIR$/src/framework/AlignmentController.java" />
-      <change type="MOVED" beforePath="C:\Users\Andrew\Documents\Studium\4. Semester\Algorithmen\PlagiCheck\src\plagicheck\PlagiCheck.java" afterPath="$PROJECT_DIR$/src/framework/PlagiCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lexer/ILexer.java" afterPath="$PROJECT_DIR$/src/lexer/ILexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lexer/SimpleLexer.java" afterPath="$PROJECT_DIR$/src/lexer/SimpleLexer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/triePackage/TrieNode.java" afterPath="$PROJECT_DIR$/src/triePackage/TrieNode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PlagiCheck.iws" />
@@ -41,19 +26,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TrieNode.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TrieNode.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/triePackage/TrieNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1513002" vertical-offset="1077" max-vertical-offset="2006">
-              <caret line="92" column="17" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="1921">
+              <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3390#3391#0" expanded="true" />
-                <element signature="e#3430#3431#0" expanded="true" />
-                <element signature="e#3470#3471#0" expanded="true" />
-                <element signature="e#3508#3509#0" expanded="true" />
-                <element signature="e#3559#3560#0" expanded="true" />
-                <element signature="e#3596#3597#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,17 +48,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Trie.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Trie.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/triePackage/Trie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.855792" vertical-offset="250" max-vertical-offset="816">
+              <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
               <folding>
-                <element signature="e#515#516#0" expanded="true" />
-                <element signature="e#564#565#0" expanded="true" />
-                <element signature="e#645#646#0" expanded="true" />
-                <element signature="e#699#700#0" expanded="true" />
-                <element signature="e#838#847#0" expanded="true" />
                 <element signature="e#1085#1086#0" expanded="true" />
                 <element signature="e#1133#1134#0" expanded="true" />
               </folding>
@@ -90,7 +64,7 @@
       <file leaf-file-name="AlignmentController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/framework/AlignmentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="731">
+            <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="782">
               <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
               <folding />
             </state>
@@ -100,7 +74,7 @@
       <file leaf-file-name="SimpleLexer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lexer/SimpleLexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="229" max-vertical-offset="1462">
+            <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1700">
               <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
               <folding />
             </state>
@@ -120,7 +94,7 @@
       <file leaf-file-name="PlagiCheck.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/framework/PlagiCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="408">
               <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding />
             </state>
@@ -170,8 +144,8 @@
         <option value="$PROJECT_DIR$/src/plagicheck/AlignmentController.java" />
         <option value="$PROJECT_DIR$/src/dictionary/Trie.java" />
         <option value="$PROJECT_DIR$/src/dictionary/TrieNode.java" />
-        <option value="$PROJECT_DIR$/src/triePackage/TrieNode.java" />
         <option value="$PROJECT_DIR$/src/lexer/SimpleLexer.java" />
+        <option value="$PROJECT_DIR$/src/triePackage/TrieNode.java" />
         <option value="$PROJECT_DIR$/src/triePackage/Trie.java" />
       </list>
     </option>
@@ -354,13 +328,7 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -588,21 +556,6 @@
       <setting name="showProgressMessages" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <extension name="scalaCoverage" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -621,6 +574,21 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <extension name="scalaCoverage" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
       <method />
     </configuration>
     <list size="1">
@@ -652,21 +620,26 @@
       <workItem from="1428561295095" duration="596000" />
       <workItem from="1428593384905" duration="6155000" />
       <workItem from="1428607106393" duration="25541000" />
-      <workItem from="1428654267184" duration="4112000" />
+      <workItem from="1428654267184" duration="4804000" />
+      <workItem from="1428661492761" duration="119000" />
     </task>
     <task id="LOCAL-00001" summary="Fast Fertig, nur noch mal Debuggen und Fehler finden evtl Code Review">
       <created>1428636414892</created>
       <updated>1428636414892</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ausgabe fertig nur noch Code verschönern">
+      <created>1428658409869</created>
+      <updated>1428658409869</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42165000" />
+    <option name="totallyTimeSpent" value="42976000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -715,7 +688,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Fast Fertig, nur noch mal Debuggen und Fehler finden evtl Code Review" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fast Fertig, nur noch mal Debuggen und Fehler finden evtl Code Review" />
+    <MESSAGE value="Ausgabe fertig nur noch Code verschönern" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ausgabe fertig nur noch Code verschönern" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -732,11 +706,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="221">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding>
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#838#847#0" expanded="true" />
             <element signature="e#1085#1086#0" expanded="true" />
             <element signature="e#1133#1134#0" expanded="true" />
           </folding>
@@ -747,7 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="221">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -755,7 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="289">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -802,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="340">
           <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -812,12 +778,6 @@
           <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3390#3391#0" expanded="true" />
-            <element signature="e#3430#3431#0" expanded="true" />
-            <element signature="e#3470#3471#0" expanded="true" />
-            <element signature="e#3508#3509#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#3596#3597#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -827,11 +787,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="221">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding>
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#838#847#0" expanded="true" />
             <element signature="e#1085#1086#0" expanded="true" />
             <element signature="e#1133#1134#0" expanded="true" />
           </folding>
@@ -842,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="221">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -850,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="289">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,7 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -907,12 +859,6 @@
           <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3390#3391#0" expanded="true" />
-            <element signature="e#3430#3431#0" expanded="true" />
-            <element signature="e#3470#3471#0" expanded="true" />
-            <element signature="e#3508#3509#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#3596#3597#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -922,11 +868,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="221">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding>
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#838#847#0" expanded="true" />
             <element signature="e#1085#1086#0" expanded="true" />
             <element signature="e#1133#1134#0" expanded="true" />
           </folding>
@@ -937,7 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="221">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,7 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="289">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -976,7 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="340">
           <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -986,12 +924,6 @@
           <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3390#3391#0" expanded="true" />
-            <element signature="e#3430#3431#0" expanded="true" />
-            <element signature="e#3470#3471#0" expanded="true" />
-            <element signature="e#3508#3509#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#3596#3597#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1001,11 +933,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="221">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding>
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#838#847#0" expanded="true" />
             <element signature="e#1085#1086#0" expanded="true" />
             <element signature="e#1133#1134#0" expanded="true" />
           </folding>
@@ -1016,7 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="221">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,7 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="289">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1069,7 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
           <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1077,7 +1001,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,7 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
           <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1093,7 +1015,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
           <caret line="10" column="62" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1124,10 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32967034" vertical-offset="3433" max-vertical-offset="9095">
           <caret line="234" column="18" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
-          <folding>
-            <element signature="e#10065#10066#0" expanded="false" />
-            <element signature="e#10148#10149#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1163,42 +1080,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/triePackage/Trie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding>
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#838#847#0" expanded="true" />
-            <element signature="e#1085#1086#0" expanded="true" />
-            <element signature="e#1133#1134#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actionsPackage/IActionAtInsert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/triePackage/TrieNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1513002" vertical-offset="1077" max-vertical-offset="2006">
-          <caret line="92" column="17" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="1921">
+          <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3390#3391#0" expanded="true" />
-            <element signature="e#3430#3431#0" expanded="true" />
-            <element signature="e#3470#3471#0" expanded="true" />
-            <element signature="e#3508#3509#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#3596#3597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/triePackage/Trie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.855792" vertical-offset="250" max-vertical-offset="816">
+          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+          <folding>
+            <element signature="e#1085#1086#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
           </folding>
         </state>
       </provider>
