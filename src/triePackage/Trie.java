@@ -1,4 +1,7 @@
-package dictionary;
+package triePackage;
+
+import actionsPackage.IActionAtInsert;
+import mapPackage.IMapFactory;
 
 import java.util.*;
 
@@ -9,8 +12,12 @@ public class Trie implements ITrie {
     private IMapFactory mapFactory;
     private TrieNode root;
 
+    //nur Extra zur Ausgabe
+    int lineLength;
+
     public Trie(IMapFactory mapFactory) {
         root = new TrieNode(mapFactory);
+        this.lineLength = lineLength;
     }
 
     @Override
@@ -33,8 +40,8 @@ public class Trie implements ITrie {
         return iterator;
     }
 
-    public String myRecursiveToString() {
-        return root.firstRec();
+    public String myRecursiveToString(int lineLength) {
+        return root.firstRec(lineLength);
     }
 
 

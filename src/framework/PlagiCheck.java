@@ -1,6 +1,4 @@
-package plagicheck;
-
-import javax.swing.*;
+package framework;
 
 /**
  * Created by Andrew on 27.03.2015.

@@ -1,8 +1,14 @@
 package lexer;
 
-import dictionary.*;
-import java.io.BufferedReader;
+import actionsPackage.*;
+import token.IToken;
+import triePackage.*;
+import mapPackage.IMapFactory;
+import mapPackage.TreeMapFactory;
+
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -17,6 +23,9 @@ public class SimpleLexer implements ILexer {
     final private Trie trie;
     private String line;
     private StringTokenizer tk = null;
+    //nur Extra für die Aufgabe
+    int lineLenth;
+    //Scanner klasse zum Einlesen.
     Scanner scanner = new Scanner(System.in);
 
     public SimpleLexer () throws IOException {
@@ -24,7 +33,10 @@ public class SimpleLexer implements ILexer {
         line = scanner.nextLine();
         if (line != null) {
             tk = new StringTokenizer(line);
+            lineLenth = line.length();
         }
+
+
         this.trie = new Trie (mapFactory);
         while (tk.hasMoreTokens()) {
             String buffString = tk.nextToken();
@@ -33,7 +45,6 @@ public class SimpleLexer implements ILexer {
         }
 
     }
-
 
 
     public IToken getNextToken () throws IOException {
@@ -76,7 +87,7 @@ public class SimpleLexer implements ILexer {
         throw new UnsupportedOperationException("noch nicht implementiert");
     }
     public String toString() {
-        return trie.myRecursiveToString();
+        return trie.myRecursiveToString(lineLenth);
     }
 
 }

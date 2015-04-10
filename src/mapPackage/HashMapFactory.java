@@ -1,4 +1,6 @@
-package dictionary;
+package mapPackage;
+
+import mapPackage.IMapFactory;
 
 import java.util.HashMap;
 import java.util.Map;

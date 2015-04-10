@@ -1,4 +1,4 @@
-package dictionary;
+package actionsPackage;
 
 /**
  * Created by Andrew on 31.03.2015.

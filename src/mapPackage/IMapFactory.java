@@ -1,4 +1,4 @@
-package dictionary;
+package mapPackage;
 
 import java.util.Map;
 

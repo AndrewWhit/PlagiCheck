@@ -1,6 +1,7 @@
-package dictionary;
+package triePackage;
 
-import com.sun.deploy.panel.ITreeNode;
+import actionsPackage.IActionAtInsert;
+import mapPackage.IMapFactory;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class TrieNode implements ITrieNode {
 
     @Override
     public ITrieReference recursiveInsert(Iterator k, IActionAtInsert a) {
-        while (k.hasNext()) {
+        if (k.hasNext()) {
             Integer key = (Integer) k.next();
             //Schlüssel existiert bereits.
             if (outgoingEdgeMap.containsKey(key)) {
@@ -49,54 +50,60 @@ public class TrieNode implements ITrieNode {
                 value.recursiveInsert(k, a);
             }
         }
-        //Schlüsselknoten Ende
-        if (iTrieReference.getFound()) {
-            return iTrieReference;
-        }
-        //Kein Schlüsselknoten Ende
         else {
-            this.iTrieReference.setAValue(a.actionAtKeyNotFound());
-            this.iTrieReference.setFound(true);
+            //Schlüsselknoten Ende
+            if (iTrieReference.getFound()) {
+                return iTrieReference;
+            }
+            //Kein Schlüsselknoten Ende
+            else {
+                this.iTrieReference.setAValue(a.actionAtKeyNotFound());
+                this.iTrieReference.setFound(true);
+                return iTrieReference;
+            }
         }
-        return iTrieReference;
+        return null;
     }
 
-    public String firstRec() {
+    public String firstRec(int lineLength) {
         StringBuilder sb = new StringBuilder();
         for (Object key : outgoingEdgeMap.keySet()) {
             TrieNode trieString = (TrieNode) outgoingEdgeMap.get(key);
-            trieString.recString(trieString, sb, 0);
+            trieString.recString(trieString, sb, 0, lineLength);
         }
         return sb.toString();
     }
 
-    public StringBuilder recString(TrieNode trieNode, StringBuilder sb, int level) {
+    public StringBuilder recString(TrieNode trieNode, StringBuilder sb, int level, int lineLength) {
         for (int i = 0; i < level; i++) {
             sb.append(".");
         }
         sb.append((char) Integer.parseInt(trieNode.getIngoingPartialKey().toString()));
         if (trieNode.getITrieReference().getFound()) {
-            sb.append(trieNode.getITrieReference().getValue().toString() + "\n");
+            for (int i = 0; i < lineLength - level; i++) {
+                sb.append(" ");
+            }
+            sb.append("| -> " + trieNode.getITrieReference().getValue().toString() + "\n");
         }
         else {
             sb.append("\n");
         }
         for (Object key : trieNode.getOutgoingEdgeMap().keySet()) {
             TrieNode trieString = (TrieNode) trieNode.getOutgoingEdgeMap().get(key);
-            trieNode.recString(trieString, sb, level + 1);
+            trieNode.recString(trieString, sb, level + 1, lineLength);
         }
         return sb;
     }
 
-    public Comparable getIngoingPartialKey() {
+    private Comparable getIngoingPartialKey() {
         return ingoingPartialKey;
     }
 
-    public Map getOutgoingEdgeMap() {
+    private Map getOutgoingEdgeMap() {
         return outgoingEdgeMap;
     }
 
-    public ITrieReference getITrieReference () {
+    private ITrieReference getITrieReference () {
         return iTrieReference;
     }
 

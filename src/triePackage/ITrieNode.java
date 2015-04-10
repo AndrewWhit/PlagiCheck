@@ -1,4 +1,6 @@
-package dictionary;
+package triePackage;
+
+import actionsPackage.IActionAtInsert;
 
 import java.util.Iterator;
 

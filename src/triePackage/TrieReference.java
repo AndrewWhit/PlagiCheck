@@ -1,6 +1,4 @@
-package dictionary;
-
-import java.util.Objects;
+package triePackage;
 
 /**
  * Created by Andrew on 31.03.2015.

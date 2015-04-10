@@ -1,6 +1,7 @@
-package dictionary;
+package triePackage;
 
-import javax.swing.text.html.HTMLDocument;
+import actionsPackage.IActionAtInsert;
+
 import java.util.Iterator;
 
 /**
