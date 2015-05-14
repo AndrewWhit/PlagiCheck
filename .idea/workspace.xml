@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19ef3963-6eba-42d3-9d15-76f18825bf2f" name="Default" comment="">
+<<<<<<< Updated upstream
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/triePackage/TrieNode.java" afterPath="$PROJECT_DIR$/src/triePackage/TrieNode.java" />
+=======
+>>>>>>> Stashed changes
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PlagiCheck.iws" />
@@ -121,8 +124,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Andrew" />
         <option value="Andrew Whitmore" />
+        <option value="Andrew" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -622,6 +625,16 @@
       <workItem from="1428607106393" duration="25541000" />
       <workItem from="1428654267184" duration="4804000" />
       <workItem from="1428661492761" duration="119000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1428661701944" duration="93000" />
+      <workItem from="1428661815482" duration="51000" />
+      <workItem from="1428664295336" duration="383000" />
+      <workItem from="1428665544347" duration="1933000" />
+      <workItem from="1428914802646" duration="439000" />
+      <workItem from="1428936421888" duration="1142000" />
+      <workItem from="1429087608290" duration="1464000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="Fast Fertig, nur noch mal Debuggen und Fehler finden evtl Code Review">
       <created>1428636414892</created>
@@ -631,11 +644,19 @@
       <created>1428658409869</created>
       <updated>1428658409869</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="JavaDocs für Info">
+      <created>1429088545087</created>
+      <updated>1429088545087</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="42976000" />
+=======
+    <option name="totallyTimeSpent" value="48481000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -689,7 +710,8 @@
     </option>
     <MESSAGE value="Fast Fertig, nur noch mal Debuggen und Fehler finden evtl Code Review" />
     <MESSAGE value="Ausgabe fertig nur noch Code verschönern" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ausgabe fertig nur noch Code verschönern" />
+    <MESSAGE value="JavaDocs für Info" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaDocs für Info" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

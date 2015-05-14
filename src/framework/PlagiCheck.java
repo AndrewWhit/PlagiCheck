@@ -5,7 +5,7 @@ package framework;
  */
 public class PlagiCheck {
     public static void main(String[] args) throws Exception {
-        AlignmentController controller = new AlignmentController();
+        AlignmentController controller = new AlignmentController(args[0]);
         controller.run();
        /*
         if (args.length == 2) {
