@@ -1,6 +1,7 @@
 package lexer;
 
 import actionsPackage.*;
+import token.IToken;
 import token.Token;
 import triePackage.*;
 import mapPackage.IMapFactory;
@@ -85,6 +86,10 @@ public class SimpleLexer implements ILexer {
         return result;
         }
 
+    @Override
+    public String decode(IToken tk) {
+        return null;
+    }
 
 
     public String decode(Token tk) throws UnsupportedOperationException {

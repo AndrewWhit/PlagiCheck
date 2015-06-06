@@ -14,4 +14,6 @@ public interface IToken {
     public int getClassCode();
 
     public int getRelativeCode();
+
+    public String getTokenName();
 }

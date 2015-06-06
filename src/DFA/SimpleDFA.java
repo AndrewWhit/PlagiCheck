@@ -3,33 +3,26 @@ package DFA;
 /**
  * Created by Andrew on 08.05.2015.
  */
-public class SimpleDFA implements IDFA{
-    boolean isFinal = false;
-    //States of the DFA
-    final int START_STATE = 0;
-    final int ID_STATE = 1;
-    final int PM_STATE = 2;
-    final int WS_STATE = 3;
-    final int INTCONS_STATE = 4;
-    final int FIRST_OF_DAY_STATE = 5;
-    final int SECOND_OF_DAY_STATE = 6;
-    final int DAY_STATE = 7;
-    final int FIRST_OF_MONTH_STATE = 8;
-    final int SECOND_OF_MONTH_STATE = 9;
-    final int MONTH_STATE = 10;
-    final int FIRST_OF_YEAR_STATE = 11;
-    final int SECOND_OF_YEAR_STATE = 12;
-    final int THIRD_OF_YEAR_STATE = 13;
-    final int FOURTH_OF_YEAR_STATE = 14;
-    final int DateState = 15;
-    final int EOF_STATE = 16;
-    final int FAILURE_STATE = 17;
-    //Regulär Expressions
-    String idPattern = "[A-Z]|[a-z]";
-    String whiteSpace = "[ ]";
-    String intPattern = "[0-9]";
-    String pmPattern = "[!]|[?]|[,]|[.]";
-
+public class SimpleDFA implements IDFA {
+    //final states
+    final int startState = 0;
+    final int idState = 1;
+    final int intState = 2;
+    final int pmState = 3;
+    final int dateState = 4;
+    final int failureState = 99;
+    final int eofState = -1;
+    //not final states
+    final int dayState = 14;
+    final int firstOfdayState = 5;
+    final int secondDayState = 6;
+    final int firstOfMonthState = 7;
+    final int secondofMonthState = 8;
+    final int monthState = 9;
+    final int firstOfYearState = 10;
+    final int secondOfYearState = 11;
+    final int thirdOfYearState = 12;
+    final int fourthOfYearState = 13;
     @Override
     public int initialState() {
         return 0;
@@ -40,122 +33,163 @@ public class SimpleDFA implements IDFA{
         return 0;
     }
 
+    /**
+     * gives the information what will be the next transaction.
+     * @param state
+     * @param
+     * @return
+     */
+    public int trans (int state, int intSymbol) {
+        //Startzustand
+        char symbol = (char) intSymbol;
+        switch (state) {
+            case startState:
+                if (Character.isLetter(symbol)) {
+                    return idState;
+                }
+                else if (Character.isDigit(symbol)) {
+                    return firstOfdayState;
+                }
+                else if (intSymbol == eofState) {
+                    return eofState;
+                }
+                else if (checkPM(symbol)) {
+                    return pmState;
+                }
+            case idState:
+                if (Character.isLetter(symbol)) {
+                    return idState;
+                }
+                return failureState;
+            case firstOfdayState:
+                if (Character.isDigit(symbol)) {
+                    return secondDayState;
+                }
+                return failureState;
+            case secondDayState:
+                if (checkDot(symbol)) {
+                    return dayState;
+                }
+                else if (Character.isDigit(symbol)) {
+                    return intState;
+                }
+                return failureState;
+            case intState:
+                if (Character.isDigit(symbol)) {
+                    return intState;
+                }
+                return failureState;
+            case dayState:
+                if (Character.isDigit(symbol)) {
+                    return firstOfMonthState;
+                }
+                return failureState;
+            case firstOfMonthState:
+                if (Character.isDigit(symbol)) {
+                    return secondofMonthState;
+                }
+                return failureState;
+            case secondofMonthState:
+                if (checkDot(symbol)) {
+                    return monthState;
+                }
+                return failureState;
+            case monthState:
+                if (Character.isDigit(symbol)) {
+                    return firstOfYearState;
+                }
+                return failureState;
+            case firstOfYearState:
+                if (Character.isDigit(symbol)) {
+                    return secondOfYearState;
+                }
+                return failureState;
+            case secondOfYearState:
+                if (Character.isDigit(symbol)) {
+                    return thirdOfYearState;
+                }
+                return failureState;
+            case thirdOfYearState:
+                if (Character.isDigit(symbol)) {
+                    return dateState;
+                }
+                return failureState;
+            case pmState:
+                return failureState;
+            case dateState:
+                return failureState;
+            case eofState:
+                return eofState;
+            default:
+                return failureState;
+        }
+    }
+
     @Override
     public boolean isFinal(int state) {
-        return isFinal;
+        switch (state) {
+            case idState:
+                return true;
+            case intState:
+                return true;
+            case pmState:
+                return true;
+            case dateState:
+                return true;
+            case firstOfdayState:
+                return true;
+            case secondDayState:
+                return true;
+        }
+        return false;
     }
 
     @Override
     public boolean isError(int state) {
+        if (state == failureState || state == eofState) {
+            return true;
+        }
         return false;
     }
 
     @Override
     public int getTokenClass(int state) {
+        switch (state) {
+            case idState:
+                return idState;
+            case intState:
+                return intState;
+            case pmState:
+                return pmState;
+            case dateState:
+                return dateState;
+            case firstOfdayState:
+                return intState;
+            case secondDayState:
+                return intState;
+        }
         return 0;
     }
 
-    public int trans (int state, String symbol) {
-        switch (state) {
-            case START_STATE:
-                if (whiteSpace.matches(symbol)) {
-                    return WS_STATE;
-                }
-                else if (idPattern.matches(symbol)) {
-                    return ID_STATE;
-                }
-                else if (intPattern.matches(symbol)) {
-                    return FIRST_OF_DAY_STATE;
-                }
-                else {
-                    return FAILURE_STATE;
-                }
-            case ID_STATE:
-                if (idPattern.matches(symbol)) {
-                    return ID_STATE;
-                }
-                else {
-                    return FAILURE_STATE;
-                }
-            case PM_STATE:
-                return FAILURE_STATE;
-            case INTCONS_STATE:
-                if (intPattern.matches(symbol)) {
-                    return INTCONS_STATE;
-                }
-                else {
-                    return FAILURE_STATE;
-                }
-            case FIRST_OF_DAY_STATE:
-                if (intPattern.matches(symbol)) {
-                    return SECOND_OF_DAY_STATE;
-                }
-                else if (pmPattern.matches(symbol))  {
-                    return DAY_STATE;
-                }
-                else {
-                    return FAILURE_STATE;
-                }
-            case SECOND_OF_DAY_STATE:
-                if (intPattern.matches(symbol)) {
-                    return INTCONS_STATE;
-                }
-                else if (pmPattern.matches(symbol)) {
-                    return DAY_STATE;
-                }
-                else {
-                    return FAILURE_STATE;
-                }
-            case DAY_STATE:
-                if (intPattern.matches(symbol)) {
-                    return FIRST_OF_MONTH_STATE;
-                }
-                else {
-                    return FAILURE_STATE;
-                }
-            case FIRST_OF_MONTH_STATE:
-                if (intPattern.matches(symbol)) {
-                    return SECOND_OF_MONTH_STATE;
-                }
-                else if (pmPattern.matches(symbol)) {
-                    return MONTH_STATE;
-                }
-                else {
-                    return FAILURE_STATE;
-                }
-            case MONTH_STATE:
-                if (intPattern.matches(symbol)) {
-                    return FIRST_OF_YEAR_STATE;
-                }
-                else {
-                    return FAILURE_STATE;
-                }
-            case FIRST_OF_YEAR_STATE:
-                if (intPattern.matches(symbol)) {
-                    return SECOND_OF_YEAR_STATE;
-                }
-                else {
-                    return FAILURE_STATE;
-                }
-            case SECOND_OF_YEAR_STATE:
-                if (intPattern.matches(symbol)) {
-                    return THIRD_OF_YEAR_STATE;
-                }
-                if (whiteSpace.matches(symbol)) {
-                    return DateState;
-                }
-            case THIRD_OF_YEAR_STATE:
-                if (intPattern.matches(symbol)) {
-                    return FOURTH_OF_YEAR_STATE;
-                }
-                else {
-                    return FAILURE_STATE;
-                }
-            case FOURTH_OF_YEAR_STATE:
-                if (whiteSpace.matches(symbol)) {
-                    return DateState;
-                }
+    private boolean checkDot(char symbol) {
+        if (".".matches(symbol + "")) {
+            return true;
         }
-        return FAILURE_STATE;
+        return false;
+    }
+
+    private boolean checkPM (char symbol) {
+        if(",".matches(symbol + "")) {
+            return true;
+        }
+        else if ("!".matches(symbol + "")) {
+            return true;
+        }
+        else if ("?".matches(symbol + "")) {
+            return true;
+        }
+        else {
+            return checkDot(symbol);
+        }
     }
 }

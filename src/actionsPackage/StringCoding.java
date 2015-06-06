@@ -27,10 +27,6 @@ public class StringCoding implements IActionAtInsert {
         return new Integer(counter++);
     }
 
-    public int getActualValue() {
-        return counter;
-    }
-
     public String toString () {
         return "Counter = "+counter;
     }
