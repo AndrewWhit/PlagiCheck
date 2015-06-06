@@ -4,37 +4,33 @@ package framework;
  * Created by Andrew on 27.03.2015.
  */
 
+import com.sun.xml.internal.bind.v2.TODO;
 import lexer.*;
+import token.IToken;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
+import java.util.Scanner;
 
 
 public class AlignmentController {
+    String original;
+    String plagi;
 
-
-    public AlignmentController() {
-
+    public AlignmentController(String original, String plagi) {
+            this.original = "C:\\Users\\Andrew\\Documents\\Studium\\4. Semester\\Algorithmen\\PlagiCheck\\Text.txt";
+            this.plagi = plagi;
     }
-
 
     public void run() throws FileNotFoundException, IOException {
-        /* Erstes File lesen */
-        /*InputStream istStreamOriginal = new FileInputStream(original);
-        Reader readerOriginal = new InputStreamReader(istStreamOriginal);
-        BufferedReader inputOriginal = new BufferedReader(readerOriginal);
-        */
-        /* später: hier zweites File */
-
-        lexer.ILexer lexer = new SimpleLexer();
-        String recString = lexer.toString();
-        System.out.println(recString);
-        /*IToken token = lexer.getNextToken();
+        InputStream istreamOriginal = new FileInputStream(new File(original));
+        Reader readerOriginal = new InputStreamReader(istreamOriginal);
+        PushbackReader inputOriginal = new PushbackReader(readerOriginal, 256);
+        ILexer lexer = new FilterLexer(inputOriginal);
+        IToken token = lexer.getNextToken();
         while (token != null) {
-            System.out.println("Gelesen: "+token);
+            System.out.println(lexer.decode(token));
             token = lexer.getNextToken();
         }
-
-        /* später: hier Lexer an zweiten Input binden; Leseschleife */
     }
 }
+

@@ -19,28 +19,24 @@ import java.util.StringTokenizer;
  */
 public class SimpleLexer implements ILexer {
     final private IMapFactory mapFactory = new TreeMapFactory(); //DIC
-    final private IActionAtInsert action = new StringCoding(1);
+    final private IActionAtInsert action = new StringCoding(4711);
     final private Trie trie;
     private String line;
     private StringTokenizer tk = null;
     //nur Extra für die Aufgabe
     int lineLenth;
     //Scanner klasse zum Einlesen.
-    Scanner scanner;
-
+    Scanner scanner = new Scanner(System.in);
 
     public SimpleLexer () throws IOException {
-        System.out.println("Bitte hier die Wörter eingeben und mit Enter bestätigen.");
-        scanner = new Scanner(System.in);
+
         line = scanner.nextLine();
         if (line != null) {
             tk = new StringTokenizer(line);
             lineLenth = line.length();
         }
 
-        /*
-            Hier wird der Trie konstruiert.
-         */
+
         this.trie = new Trie (mapFactory);
         while (tk.hasMoreTokens()) {
             String buffString = tk.nextToken();

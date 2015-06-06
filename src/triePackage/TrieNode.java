@@ -1,6 +1,6 @@
 package triePackage;
 
-import actionsPackage.IActionAtInsert;
+import actionsPackage.*;
 import mapPackage.IMapFactory;
 
 import java.util.Iterator;
@@ -47,28 +47,27 @@ public class TrieNode implements ITrieNode {
             //Schlüssel existiert bereits.
             if (outgoingEdgeMap.containsKey(key)) {
                 TrieNode value = (TrieNode) outgoingEdgeMap.get(key);
-                value.recursiveInsert(k, a);
+                return value.recursiveInsert(k, a);
             }
             //Schlüssel existiert noch nicht.
             else {
                 outgoingEdgeMap.put(key, new TrieNode(mapFactory, this, key));
                 TrieNode value = (TrieNode) outgoingEdgeMap.get(key);
-                value.recursiveInsert(k, a);
+                return value.recursiveInsert(k, a);
             }
         }
         else {
             //Schlüsselknoten Ende
             if (iTrieReference.getFound()) {
-                return iTrieReference;
+                return this.iTrieReference;
             }
             //Kein Schlüsselknoten Ende
             else {
                 this.iTrieReference.setAValue(a.actionAtKeyNotFound());
                 this.iTrieReference.setFound(true);
-                return iTrieReference;
+                return this.iTrieReference;
             }
         }
-        return null;
     }
 
     /**
@@ -125,6 +124,29 @@ public class TrieNode implements ITrieNode {
 
     private ITrieReference getITrieReference () {
         return iTrieReference;
+    }
+
+    public String searchString (TrieNode trieNode, int relativeCode, StringBuilder sb) {
+        sb.append((char) Integer.parseInt(trieNode.getIngoingPartialKey().toString()));
+        if (trieNode.getITrieReference().getFound() && relativeCode == (Integer) trieNode.getITrieReference().getValue()) {
+            return sb.toString();
+        }
+        else {
+            for (Object key : trieNode.getOutgoingEdgeMap().keySet()) {
+                TrieNode trieNode1 = (TrieNode) outgoingEdgeMap.get(key);
+                searchString(trieNode1, relativeCode, sb);
+            }
+        }
+        return sb.toString();
+    }
+
+    public String initialise (int relativeCode) {
+        StringBuilder sb = new StringBuilder();
+        for (Object key : outgoingEdgeMap.keySet()) {
+            TrieNode trieNode = (TrieNode) outgoingEdgeMap.get(key);
+            searchString(trieNode, relativeCode, sb);
+        }
+        return sb.toString();
     }
 
 }
