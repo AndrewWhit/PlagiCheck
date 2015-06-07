@@ -27,8 +27,9 @@ public class Trie implements ITrie {
 
     @Override
     public ITrieReference insert (String s, IActionAtInsert a1) {
-        return this.insert(stringToIterator(s), a1);
+        return insert(stringToIterator(s), a1);
     }
+
     private Iterator stringToIterator (String s) {
         char[] chars = s.toCharArray();
         List<Integer> intList = new ArrayList<Integer>();
@@ -43,7 +44,6 @@ public class Trie implements ITrie {
         return root.firstRec(lineLength);
     }
 
-    public String searchString(int relativeCode) {
-        return root.initialise(relativeCode);
-    }
+
+
 }

@@ -34,6 +34,12 @@ public class TrieNode implements ITrieNode {
         this.iTrieReference = new TrieReference (this);
     }
 
+    /**
+     * Die rekursive insert des Iterators in die Knoten.
+     * @param k der Iterator
+     * @param a die Action insert klasse.
+     * @return Trie refernce.
+     */
     @Override
     public ITrieReference recursiveInsert(Iterator k, IActionAtInsert a) {
         if (k.hasNext()) {
@@ -64,6 +70,11 @@ public class TrieNode implements ITrieNode {
         }
     }
 
+    /**
+     * Erste recursiven für die toString methode. Wird nur benutzt um von Root zu den nächsten Knoten zu gehen.
+     * @param lineLength
+     * @return
+     */
     public String firstRec(int lineLength) {
         StringBuilder sb = new StringBuilder();
         for (Object key : outgoingEdgeMap.keySet()) {
@@ -74,23 +85,31 @@ public class TrieNode implements ITrieNode {
         return sb.toString();
     }
 
-    public StringBuilder recString(TrieNode trieNode, StringBuilder sb, int level, int lineLength) {
+    /**
+     * Eigentliche Rekursions Methode.
+     * @param parent Der parent TrieNode.
+     * @param sb der StringBuilder.
+     * @param level Level des Strings. Root = 0; Tochter Knoten von Root = 1, usw.
+     * @param lineLength Länge des zu beginne eingelesenen Strings, ist nicht wichtig nur zur verschönerung der Ausgabe.
+     * @return den Stringbuilder
+     */
+    public StringBuilder recString(TrieNode parent, StringBuilder sb, int level, int lineLength) {
         for (int i = 0; i < level; i++) {
             sb.append(".");
         }
-        sb.append((char) Integer.parseInt(trieNode.getIngoingPartialKey().toString()));
-        if (trieNode.getITrieReference().getFound()) {
+        sb.append((char) Integer.parseInt(parent.getIngoingPartialKey().toString()));
+        if (parent.getITrieReference().getFound()) {
             for (int i = 0; i < lineLength - level; i++) {
                 sb.append(" ");
             }
-            sb.append("| -> " + trieNode.getITrieReference().getValue().toString() + "\n");
+            sb.append("| -> " + parent.getITrieReference().getValue().toString() + "\n");
         }
         else {
             sb.append("\n");
         }
-        for (Object key : trieNode.getOutgoingEdgeMap().keySet()) {
-            TrieNode trieString = (TrieNode) trieNode.getOutgoingEdgeMap().get(key);
-            trieNode.recString(trieString, sb, level + 1, lineLength);
+        for (Object key : parent.getOutgoingEdgeMap().keySet()) {
+            TrieNode trieString = (TrieNode) parent.getOutgoingEdgeMap().get(key);
+            parent.recString(trieString, sb, level + 1, lineLength);
         }
         return sb;
     }

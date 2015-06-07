@@ -2,12 +2,13 @@ package lexer;
 
 import actionsPackage.*;
 import token.IToken;
-import token.Token;
 import triePackage.*;
 import mapPackage.IMapFactory;
 import mapPackage.TreeMapFactory;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -26,12 +27,6 @@ public class SimpleLexer implements ILexer {
     int lineLenth;
     //Scanner klasse zum Einlesen.
     Scanner scanner = new Scanner(System.in);
-
-    //tries für Tokens
-    final private Trie identiefier = new Trie(mapFactory);
-    final private Trie intCons = new Trie(mapFactory);
-    final private Trie wsClass = new Trie(mapFactory);
-    final private Trie pMarkClass = new Trie(mapFactory);
 
     public SimpleLexer () throws IOException {
 
@@ -52,9 +47,9 @@ public class SimpleLexer implements ILexer {
     }
 
 
-    public Token getNextToken () throws IOException {
+    public IToken getNextToken () throws IOException {
         //Log.println(Log.Urgent, "--> next token");
-        Token result = null;
+        IToken result = null;
         boolean fountToken = false;
         boolean noMoreToken = false;
         do {
@@ -86,13 +81,9 @@ public class SimpleLexer implements ILexer {
         return result;
         }
 
-    @Override
-    public String decode(IToken tk) {
-        return null;
-    }
 
 
-    public String decode(Token tk) throws UnsupportedOperationException {
+    public String decode(IToken tk) throws UnsupportedOperationException {
         throw new UnsupportedOperationException("noch nicht implementiert");
     }
     public String toString() {
