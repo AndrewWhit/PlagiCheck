@@ -44,6 +44,10 @@ public class Token implements IToken {
                 return "INTEGER";
             case 6:
                 return "INTEGER";
+            case 15:
+                return "WHITESPACE";
+            case -1:
+                return "EOF";
         }
         return null;
     }

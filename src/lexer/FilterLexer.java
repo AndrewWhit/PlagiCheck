@@ -14,12 +14,16 @@ public class FilterLexer implements ILexer {
     ILexer lexer;
 
     public FilterLexer(PushbackReader pb) {
-        lexer = new BaseLexer(filter(pb));
+        lexer = new BaseLexer(pb);
     }
 
     @Override
     public Token getNextToken() throws IOException {
-        return lexer.getNextToken();
+        Token token = lexer.getNextToken();
+        if (token.getClassCode() == 15) {
+            return lexer.getNextToken();
+        }
+        return token;
     }
 
     @Override

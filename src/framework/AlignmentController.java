@@ -27,7 +27,7 @@ public class AlignmentController {
         PushbackReader inputOriginal = new PushbackReader(readerOriginal, 256);
         ILexer lexer = new FilterLexer(inputOriginal);
         IToken token = lexer.getNextToken();
-        while (token != null) {
+        while (!token.getTokenName().matches("EOF")) {
             System.out.println(lexer.decode(token));
             token = lexer.getNextToken();
         }

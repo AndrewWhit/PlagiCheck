@@ -10,6 +10,7 @@ public class SimpleDFA implements IDFA {
     final int intState = 2;
     final int pmState = 3;
     final int dateState = 4;
+    final int whiteSpaceState = 15;
     final int failureState = 99;
     final int eofState = -1;
     //not final states
@@ -52,6 +53,9 @@ public class SimpleDFA implements IDFA {
                 }
                 else if (intSymbol == eofState) {
                     return eofState;
+                }
+                else if (Character.isWhitespace(symbol)) {
+                    return whiteSpaceState;
                 }
                 else if (checkPM(symbol)) {
                     return pmState;
@@ -118,6 +122,11 @@ public class SimpleDFA implements IDFA {
                 return failureState;
             case dateState:
                 return failureState;
+            case whiteSpaceState:
+                if (Character.isWhitespace(symbol)) {
+                    return whiteSpaceState;
+                }
+                return failureState;
             case eofState:
                 return eofState;
             default:
@@ -139,6 +148,8 @@ public class SimpleDFA implements IDFA {
             case firstOfdayState:
                 return true;
             case secondDayState:
+                return true;
+            case whiteSpaceState:
                 return true;
         }
         return false;
@@ -167,6 +178,8 @@ public class SimpleDFA implements IDFA {
                 return intState;
             case secondDayState:
                 return intState;
+            case whiteSpaceState:
+                return whiteSpaceState;
         }
         return 0;
     }

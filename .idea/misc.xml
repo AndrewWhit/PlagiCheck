@@ -28,7 +28,7 @@
     <option name="priority" value="Medium" />
     <option name="excludeFilter" value="" />
   </component>
-  <component name="IdProvider" IDEtalkID="0F04FEBC56A2058A9A2A0FB8E0680D0F" />
+  <component name="IdProvider" IDEtalkID="2F04684E59FFDC2C452EE08F51D72C65" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -280,7 +280,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="SuppressionsComponent">
