@@ -18,8 +18,8 @@ public class FilterLexer implements ILexer {
     }
 
     @Override
-    public Token getNextToken() throws IOException {
-        Token token = lexer.getNextToken();
+    public IToken getNextToken() throws IOException {
+        IToken token = lexer.getNextToken();
         if (token.getClassCode() == 15) {
             return lexer.getNextToken();
         }

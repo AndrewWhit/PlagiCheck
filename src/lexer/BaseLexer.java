@@ -1,4 +1,4 @@
-package lexer;
+ package lexer;
 
 import DFA.SimpleDFA;
 import actionsPackage.*;
@@ -19,7 +19,7 @@ import java.io.PushbackReader;
 public class BaseLexer implements ILexer {
     PushbackReader pushbackReader;
     SimpleDFA dfa = new SimpleDFA();
-    final private IMapFactory mapFactory = new TreeMapFactory(); //DIC
+    final private IMapFactory mapFactory = new TreeMapFactory();
     private IActionAtInsert idAction = new StringCoding(4711);
     private IActionAtInsert intAction = new StringCoding(4711);
     private IActionAtInsert pmAction = new StringCoding(4711);
@@ -37,21 +37,23 @@ public class BaseLexer implements ILexer {
     }
 
     @Override
-    public Token getNextToken() throws IOException {
+    public IToken getNextToken() throws IOException {
         StringBuffer tokenBuffer = new StringBuffer();
         int currentState = 0;
         int lastFinalState = 0;
+        int lastFinalPosition = 0;
         int tmpChar = pushbackReader.read();
         while (tmpChar != -1) {
             tokenBuffer.append((char) tmpChar);
             currentState = dfa.trans(currentState, tmpChar);
             if(dfa.isFinal(currentState)) {
                 lastFinalState = currentState;
+                lastFinalPosition = tokenBuffer.length();
             }
             if (dfa.isError(currentState)) {
-                String tokenString = tokenBuffer.substring(0, tokenBuffer.toString().lastIndexOf((char) tmpChar));
+                String tokenString = tokenBuffer.substring(0, lastFinalPosition - 1);
                 ITrieReference trieReference = insertDictonary(tokenString, lastFinalState);
-                pushbackReader.unread(tokenBuffer.substring(tokenBuffer.toString().lastIndexOf((char) tmpChar)).toCharArray());
+                pushbackReader.unread(tokenBuffer.substring(lastFinalPosition).toCharArray());
                 return new Token(dfa.getTokenClass(lastFinalState), (Integer) trieReference.getValue());
             }
             tmpChar = pushbackReader.read();
@@ -89,16 +91,5 @@ public class BaseLexer implements ILexer {
         return null;
     }
 
-    private String searchString (IToken tk) {
-        switch (tk.getClassCode()) {
-            case 1:
-                return idTrie.searchString(tk.getRelativeCode());
-            case 2:
-                return intTrie.searchString(tk.getRelativeCode());
-            case 3:
-                return pmTrie.searchString(tk.getRelativeCode());
-        }
-        return dateTrie.searchString(tk.getRelativeCode());
-    }
 }
 

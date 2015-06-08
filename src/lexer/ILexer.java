@@ -10,6 +10,6 @@ import java.io.IOException;
  */
 public interface ILexer {
 
-    public Token getNextToken() throws IOException;
+    public IToken getNextToken() throws IOException;
     public String decode(IToken tk);
 }

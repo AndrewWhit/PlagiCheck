@@ -2,6 +2,7 @@ package lexer;
 
 import actionsPackage.*;
 import token.IToken;
+import token.Token;
 import triePackage.*;
 import mapPackage.IMapFactory;
 import mapPackage.TreeMapFactory;
@@ -47,9 +48,9 @@ public class SimpleLexer implements ILexer {
     }
 
 
-    public IToken getNextToken () throws IOException {
+    public IToken getNextToken() throws IOException {
         //Log.println(Log.Urgent, "--> next token");
-        IToken result = null;
+        Token result = null;
         boolean fountToken = false;
         boolean noMoreToken = false;
         do {
