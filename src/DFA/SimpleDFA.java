@@ -11,6 +11,7 @@ public class SimpleDFA implements IDFA {
     final int pmState = 3;
     final int dateState = 4;
     final int whiteSpaceState = 15;
+    final int defaultState = 13;
     final int failureState = 99;
     final int eofState = -1;
     //not final states
@@ -23,7 +24,6 @@ public class SimpleDFA implements IDFA {
     final int firstOfYearState = 10;
     final int secondOfYearState = 11;
     final int thirdOfYearState = 12;
-    final int fourthOfYearState = 13;
     @Override
     public int initialState() {
         return 0;
@@ -59,6 +59,28 @@ public class SimpleDFA implements IDFA {
                 }
                 else if (checkPM(symbol)) {
                     return pmState;
+                }
+                else {
+                    return defaultState;
+                }
+            case defaultState:
+                if (Character.isLetter(symbol)) {
+                    return failureState;
+                }
+                else if (Character.isDigit(symbol)) {
+                    return failureState;
+                }
+                else if (intSymbol == eofState) {
+                    return failureState;
+                }
+                else if (Character.isWhitespace(symbol)) {
+                    return failureState;
+                }
+                else if (checkPM(symbol)) {
+                    return failureState;
+                }
+                else {
+                    return defaultState;
                 }
             case idState:
                 if (Character.isLetter(symbol)) {
@@ -151,6 +173,8 @@ public class SimpleDFA implements IDFA {
                 return true;
             case whiteSpaceState:
                 return true;
+            case defaultState:
+                return true;
         }
         return false;
     }
@@ -180,6 +204,8 @@ public class SimpleDFA implements IDFA {
                 return intState;
             case whiteSpaceState:
                 return whiteSpaceState;
+            case defaultState:
+                return defaultState;
         }
         return 0;
     }

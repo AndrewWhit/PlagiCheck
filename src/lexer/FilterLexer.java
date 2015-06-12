@@ -13,8 +13,8 @@ public class FilterLexer implements ILexer {
     PushbackReader pushbackReader;
     ILexer lexer;
 
-    public FilterLexer(PushbackReader pb) {
-        lexer = new BaseLexer(pb);
+    public FilterLexer() {
+        lexer = new BaseLexer();
     }
 
     @Override
@@ -29,6 +29,16 @@ public class FilterLexer implements ILexer {
     @Override
     public String decode(IToken tk) {
         return lexer.decode(tk);
+    }
+
+    @Override
+    public void setPushbackReader(PushbackReader pb) {
+        lexer.setPushbackReader(pb);
+    }
+
+    @Override
+    public String decodeAufgabe2(IToken tk) {
+        return lexer.decodeAufgabe2(tk);
     }
 
     /**

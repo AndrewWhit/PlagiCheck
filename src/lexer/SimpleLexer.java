@@ -8,6 +8,7 @@ import mapPackage.IMapFactory;
 import mapPackage.TreeMapFactory;
 
 import java.io.IOException;
+import java.io.PushbackReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -87,6 +88,17 @@ public class SimpleLexer implements ILexer {
     public String decode(IToken tk) throws UnsupportedOperationException {
         throw new UnsupportedOperationException("noch nicht implementiert");
     }
+
+    @Override
+    public void setPushbackReader(PushbackReader pb) {
+
+    }
+
+    @Override
+    public String decodeAufgabe2(IToken tk) {
+        return null;
+    }
+
     public String toString() {
         return trie.myRecursiveToString(lineLenth);
     }

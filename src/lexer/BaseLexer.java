@@ -12,8 +12,9 @@ import triePackage.Trie;
 
 import java.io.IOException;
 import java.io.PushbackReader;
+import java.util.TreeMap;
 
-/**
+ /**
  * Created by Andrew on 08.05.2015.
  */
 public class BaseLexer implements ILexer {
@@ -25,16 +26,22 @@ public class BaseLexer implements ILexer {
     private IActionAtInsert pmAction = new StringCoding(4711);
     private IActionAtInsert dateAction = new StringCoding(4711);
     private IActionAtInsert whiteSpaceAction = new StringCoding(4711);
+    private IActionAtInsert defaultAction = new StringCoding(4711);
     //Tries für Datenverwaltung
     Trie idTrie = new Trie(mapFactory);
     Trie intTrie = new Trie(mapFactory);
     Trie pmTrie = new Trie(mapFactory);
     Trie dateTrie = new Trie(mapFactory);
     Trie whiteSpaceTrie = new Trie(mapFactory);
+    Trie defaultTrie = new Trie(mapFactory);
+    //TreeMaps für die Tries
+    TreeMap <IToken, String> idMap = new TreeMap<IToken, String>();
+    TreeMap <IToken, String> intMap = new TreeMap<IToken, String>();
+    TreeMap <IToken, String> pmMap = new TreeMap<IToken, String>();
+    TreeMap <IToken, String> dateMap = new TreeMap<IToken, String>();
+    TreeMap <IToken, String> whiteSpaceMap = new TreeMap<IToken, String>();
+    TreeMap <IToken, String> defaultMap = new TreeMap<IToken, String>();
 
-    public BaseLexer (PushbackReader pushbackReader) {
-        this.pushbackReader = pushbackReader;
-    }
 
     @Override
     public IToken getNextToken() throws IOException {
@@ -51,7 +58,13 @@ public class BaseLexer implements ILexer {
                 lastFinalPosition = tokenBuffer.length();
             }
             if (dfa.isError(currentState)) {
-                String tokenString = tokenBuffer.substring(0, lastFinalPosition - 1);
+                String tokenString;
+                if (lastFinalPosition == 1) {
+                    tokenString = tokenBuffer.substring(0, 1);
+                }
+                else {
+                    tokenString = tokenBuffer.substring(0, lastFinalPosition - 1);
+                }
                 ITrieReference trieReference = insertDictonary(tokenString, lastFinalState);
                 pushbackReader.unread(tokenBuffer.substring(lastFinalPosition).toCharArray());
                 return new Token(dfa.getTokenClass(lastFinalState), (Integer) trieReference.getValue());
@@ -60,14 +73,45 @@ public class BaseLexer implements ILexer {
             if (tmpChar == -1) {
                 String tokenString = tokenBuffer.substring(0, tokenBuffer.toString().length());
                 ITrieReference trieReference = insertDictonary(tokenString, lastFinalState);
-                return new Token(dfa.getTokenClass(lastFinalState), (Integer) trieReference.getValue());
+                IToken token = new Token(dfa.getTokenClass(lastFinalState), (Integer) trieReference.getValue());
+                if (trieReference.getFound()) {
+                    inverseDictionaryEntry(token, tokenString);
+                }
+                return token;
             }
         }
         return new Token(-1, -1);
     }
 
+    private void inverseDictionaryEntry(IToken token, String string) {
+        switch (token.getClassCode()) {
+            case 1:
+                idMap.put(token, string);
+            case 2:
+                intMap.put(token, string);
+            case 3:
+                pmMap.put(token, string);
+            case 4:
+                dateMap.put(token, string);
+            case 15:
+                whiteSpaceMap.put(token, string);
+            case 13:
+                defaultMap.put(token, string);
+        }
+    }
+
+     @Override
+     public void setPushbackReader (PushbackReader pb) {
+         this.pushbackReader = pb;
+     }
+
     @Override
     public String decode(IToken tk) {
+        return new String("(" + tk.getClassCode() + " = " + tk.getTokenName() + "|" + tk.getRelativeCode() + ")");
+    }
+
+    @Override
+    public String decodeAufgabe2 (IToken tk) {
         return new String("(" + tk.getClassCode() + " = " + tk.getTokenName() + "|" + tk.getRelativeCode() + ")");
     }
 
@@ -87,6 +131,8 @@ public class BaseLexer implements ILexer {
                 return intTrie.insert(string, intAction);
             case 15:
                 return whiteSpaceTrie.insert(string, whiteSpaceAction);
+            case 13:
+                return defaultTrie.insert(string, defaultAction);
         }
         return null;
     }

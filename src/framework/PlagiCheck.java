@@ -8,7 +8,8 @@ public class PlagiCheck {
 
         if (args.length == 2) {
             AlignmentController controller = new AlignmentController(args[0], args[1]);
-            controller.run();
+            //controller.run();
+            controller.runAufgabe2();
         }
         else throw new Exception("Wir erwarten den Namen des Originals und den Namen des Plagiates");
 

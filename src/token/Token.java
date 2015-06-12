@@ -2,12 +2,13 @@ package token;
 
 import actionsPackage.*;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 /**
  * Created by Andrew on 09.04.2015.
  */
-public class Token implements IToken {
+public class Token implements IToken, Comparable {
     int classCode;
     int relativeCode;
 
@@ -48,7 +49,24 @@ public class Token implements IToken {
                 return "WHITESPACE";
             case -1:
                 return "EOF";
+            case 13:
+                return "DEFAULT";
         }
         return null;
+    }
+
+    public int compareTo(IToken o) {
+        if (this.getClassCode() > o.getClassCode()) {
+            return 1;
+        }
+        if (this.getClassCode() < o.getClassCode()) {
+            return -1;
+        }
+        return 0;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return this.compareTo((IToken) o);
     }
 }
